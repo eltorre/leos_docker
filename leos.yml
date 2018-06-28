@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  leos:
+    container_name: leos
+    image: leos:latest
+    ports:
+      - 9999:8080
