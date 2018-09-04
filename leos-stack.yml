@@ -1,0 +1,37 @@
+version: '2'
+
+volumes:
+  maven-repo:
+
+services:
+  leos:
+    container_name: leos
+    image: leos:latest
+    ports:
+      - 9999:8080
+    volumes:
+      - maven-repo:/root/.m2
+
+  user_repo:
+    container_name: user_repo
+    image: user_repo:latest
+    ports: 
+      - 9095:9095
+    volumes:
+      - maven-repo:/root/.m2
+
+  chemistry:
+    container_name: chemistry
+    image: chemistry:latest
+    ports: 
+      - 9090:9090
+    volumes:
+      - maven-repo:/root/.m2
+
+  annotate:
+    container_name: annotate
+    image: annotate:latest
+    ports: 
+      - 9099:9099
+    volumes:
+      - maven-repo:/root/.m2 
