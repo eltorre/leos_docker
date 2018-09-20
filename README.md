@@ -17,3 +17,6 @@ Docker image for [LEOS-pilot](https://joinup.ec.europa.eu/release/leos-pilot/100
 #### Ubuntu 16.04 && 14.04
 * Docker version 1.13.1
 * docker-compose version 1.8.0
+
+### Windows 7
+* docker-toolkit
