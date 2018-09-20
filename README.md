@@ -4,7 +4,11 @@ Docker image for [LEOS-pilot](https://joinup.ec.europa.eu/release/leos-pilot/100
 
 ### Instructions: 
 * First, get all the files in a folder (either git clone or download the zip)
-* `cd` to the folder and run `docker build $(pwd) -t leos`
+* `cd` to the folder and run 
+ * `docker -f Dockerfile_leos build $(pwd) -t leos`
+ * `docker -f Dockerfile_user_repo build $(pwd) -t user_repo`
+ * `docker -f Dockerfile_chemistry build $(pwd) -t chemistry`
+ * `docker -f Dockerfile_annotate build $(pwd) -t annotate`
 * Once the build process is complete, run `docker-compose -f leos.yml up`
 * LEOS-pilot will be available in `http://localhost:9999/leos-pilot/ui` 
 * Currently LEOS will only work in localhost
